@@ -1,0 +1,19 @@
+# Never commit or redistribute font software. Fonts are fetched locally by
+# working/fonts-ofl/fetch.sh (open-licence audition copies) or installed by the user.
+*.ttf
+*.otf
+*.ttc
+*.otc
+*.woff
+*.woff2
+*.pfb
+*.pfa
+working/fonts-ofl/**/METADATA.pb
+working/fonts-ofl/**/OFL.txt
+
+# Local caches / temp renders
+__pycache__/
+*.pyc
+node_modules/
+.DS_Store
+working/**/_preview.*
