@@ -327,5 +327,6 @@ pg(11, f"""
 """, "Decisions")
 
 # ------------------------------------------------------------------ write
-open("concept-review.html", "w").write(f"<!doctype html><html lang='en'><meta charset='utf-8'><title>HCO — Identity exploration</title><style>{CSS}</style><body>{''.join(h for _, h in sorted(pages))}</body></html>")
-print(len(pages), "pages")
+if __name__ == "__main__":
+  open("concept-review.html", "w").write(f"<!doctype html><html lang='en'><meta charset='utf-8'><title>HCO — Identity exploration</title><style>{CSS}</style><body>{''.join(h for _, h in sorted(pages))}</body></html>")
+  print(len(pages), "pages")

@@ -7,7 +7,7 @@ _Stage 1 (exploration) — 28 September 2026._
 
 | Stage | State |
 |---|---|
-| 1 · Concept routes and type directions | **Presented for approval**: `concepts/HCO-Concept-Review.pdf` (11 pages), previews in `concepts/review-png/` |
+| 1 · Concept routes and type directions | **Presented for approval**: `concepts/HCO-Concept-Review.pdf` (11 pages, three routes and type directions) and `concepts/HCO-Top-5-Concepts.pdf` (8 pages, five concepts ranked). Previews are in `concepts/review-png/` and `concepts/top5-png/` |
 | 2 · Identity system, five-page pack, exports and QA | **Not started.** Waiting for route, type and naming decisions. The brief says not to finalise the book around an unapproved logo. |
 
 ## Source material
@@ -40,6 +40,16 @@ The client's two references arrived as images in the conversation. They were not
 | **2 · Rise** (land and observation) | One bent line that reads as a field boundary from above and as ground rising to high country from the side: plan and section. | Can read as a step chart or stair; rising-line marks are common in consulting. | `concepts/marks/r2-*` |
 | **3 · The Point** (alternative) | HCO's product is clarity. A serif name closed by a square point, which also marks observations on maps and flags next steps. | Full-stop wordmarks are familiar; the compact “H.” is weak at 16 px. | `concepts/marks/r3-*` |
 
+### Top five, ranked (`concepts/HCO-Top-5-Concepts.pdf`)
+
+1. **High Bar** (21/25): recommended.
+2. **Ground Truth** (19/25, new). The two-square ground-control target used in drone mapping to pin aerial imagery to real positions, paired with Instrument Sans HCO. It is the best at 16 px, but the geometry is common. Risks: a racing flag if repeated; implied surveying services HCO does not offer. Artwork: `concepts/marks/r4-*`.
+3. **Rise** (17/25).
+4. **Horizon Line** (14/25, new). The evolution route: the horizon kept, the peak and gold dropped, and a sturdy serif HCO in Source Serif 4 under one line that runs to the format edge. It is the least distinctive. Artwork: `concepts/marks/r5-*`.
+5. **The Point** (13/25).
+
+Ratings are designer judgement from the artwork and pixel tests, not measured data. Rebuild with `python3 geometry/routes_top5.py`, then `python3 concepts/px_tests.py`, then `python3 concepts/build_top5.py`, then `node tools/pages.mjs concepts/top5-concepts.html concepts/top5-png top5 1.6 concepts/HCO-Top-5-Concepts.pdf`. Run each from its own folder, as with Stage 1.
+
 **Rejected in exploration** (see `sketches/`): square or horizon icons (they read as UI window icons); circle-in-square “pivot” (reads as a lens or target, which the brief rules out); ox-turn/boustrophedon line (reads as “2” or the CJK character 己); stacked soil-horizon bands (a hamburger/layers icon); high-bar H inside a square (a hospital or helipad sign).
 
 An idea kept for Stage 2 copy, not the logo: in FAO soil description, **H, O and C are all soil-horizon designations**. It is a genuine double meaning of “horizon” — the skyline and the layers underfoot. It is not used literally, because the H–C–O order is not a real soil profile. Verify against the FAO Guidelines for Soil Description before any public use.
@@ -63,7 +73,7 @@ Not yet done. It will be carried out on the approved mark in Stage 2, and the re
 ## Rebuilding Stage 1
 
 ```bash
-cd working/fonts-ofl && ./fetch.sh schibstedgrotesk hankengrotesk instrumentsans monasans archivo hostgrotesk familjengrotesk newsreader sourceserif4 literata besley ibmplexsans ibmplexmono chivo chivomono publicsans atkinsonhyperlegiblenext atkinsonhyperlegiblemono barlow barlowsemicondensed intertight geist geistmono redhattext redhatmono
+cd working/fonts-ofl && ./fetch.sh schibstedgrotesk sourceserif4 hankengrotesk instrumentsans monasans archivo hostgrotesk familjengrotesk newsreader sourceserif4 literata besley ibmplexsans ibmplexmono chivo chivomono publicsans atkinsonhyperlegiblenext atkinsonhyperlegiblemono barlow barlowsemicondensed intertight geist geistmono redhattext redhatmono
 pip install fonttools uharfbuzz skia-pathops cairosvg pillow pymupdf
 cd ../geometry && python3 routes.py            # outlined SVG marks → concepts/marks/
 cd ../concepts && python3 px_tests.py          # true-pixel tests → concepts/px/

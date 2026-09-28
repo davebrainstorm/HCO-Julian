@@ -13,11 +13,11 @@ def render(svgfile, box_w, box_h, out, pad=0):
     canvas.save(out); return canvas
 def flat(im):
     bg = Image.new("RGBA", im.size, (255,255,255,255)); bg.alpha_composite(im); return bg.convert("RGB")
-for r, f in [("r1", "marks/r1-compact-black.svg"), ("r2", "marks/r2-symbol-black.svg"), ("r3", "marks/r3-compact-black.svg")]:
+for r, f in [("r1", "marks/r1-compact-black.svg"), ("r2", "marks/r2-symbol-black.svg"), ("r3", "marks/r3-compact-black.svg"), ("r4", "marks/r4-symbol-black.svg"), ("r5", "marks/r5-compact-black.svg")]:
     for px in (16, 24, 32):
         im = render(f, px, px, f"px/{r}-compact-{px}.png", pad=1 if px < 24 else 2)
         flat(im).resize((px*6, px*6), Image.NEAREST).save(f"px/{r}-compact-{px}-x6.png")
-for r, f in [("r1", "marks/r1-wordmark-black.svg"), ("r2", "marks/r2-lockup-black.svg"), ("r3", "marks/r3-wordmark-black.svg")]:
+for r, f in [("r1", "marks/r1-wordmark-black.svg"), ("r2", "marks/r2-lockup-black.svg"), ("r3", "marks/r3-wordmark-black.svg"), ("r4", "marks/r4-lockup-black.svg"), ("r5", "marks/r5-wordmark-black.svg")]:
     for hpx in (20, 28):
         s = open(f).read(); w, h = [float(v) for v in re.search(r'viewBox="0 0 ([\d.]+) ([\d.]+)"', s).groups()]
         bw = round(w/h*hpx)
