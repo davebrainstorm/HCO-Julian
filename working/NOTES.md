@@ -1,14 +1,89 @@
 # HCO identity — internal working notes
 
 _Working folder only. Nothing here goes into the client handover ZIP._
-_Stage 1 (exploration) — 28 September 2026._
+_Stage 1 (exploration) — 28 September 2026. Round 3 identity system — 2 October 2026._
 
 ## Status
 
 | Stage | State |
 |---|---|
 | 1 · Concept routes and type directions | **Presented for approval**: `concepts/HCO-Concept-Review.pdf` (11 pages, three routes and type directions) and `concepts/HCO-Top-5-Concepts.pdf` (8 pages, five concepts ranked). Previews are in `concepts/review-png/` and `concepts/top5-png/` |
-| 2 · Identity system, five-page pack, exports and QA | **Not started.** Waiting for route, type and naming decisions. The brief says not to finalise the book around an unapproved logo. |
+| Round 3 · Identity system presentation | **Presented for review**: `round-3/HCO-Identity-Round-3.pdf` (24 boards). Pixel HCO, Ridgeline symbol, pixel numerals, imagery and applications. |
+| 2 · Identity system, five-page pack, exports and QA | **Not started.** Waiting for direction, type and naming decisions. The brief says not to finalise the book around an unapproved logo. |
+
+## Round 3 — identity system, pixel direction (2 October 2026)
+
+`working/round-3/HCO-Identity-Round-3.pdf` contains 24 boards at 1600 × 1000 px. PNGs at 1920 × 1200 are in `round-3/boards/`.
+
+**Brief for this round.** The user said Round 2 "looks like a €2k design" and asked for €50k craft: everything gridded and aligned, "a masterclass in branding design". Mid-round they added a third-party reference: a pixel wordmark (KURATE). It is monoline, the stroke is two pixels, and curves step in one-pixel stairs. The instruction was to replicate that pixel style for the mountain terrain and the HCO text.
+- The reference was shared as an image in the conversation and is not stored in the repo. It is internal inspiration only and is not shown in the client deck.
+- Only the technique is borrowed. The HCO letterforms are drawn from scratch on HCO's own module.
+- This reverses the Round 2 rejection of "W2 grid-built", which was judged to read as a game face. The difference now is a finer stair logic, integer proportions, and a calm uppercase descriptor in Instrument Sans.
+
+**Mark (master files in `round-3/marks/`, built by `marks.py` from `mark.py` and `pixel.py`).**
+- **Symbol: Ridgeline, unchanged in idea.**
+  - Eight samples of a measured section, heights 0 1 1 2 3 4 3 2, one cell per sample, on an 8 × 5 module grid. The cell gap is 0.1M.
+  - The section is now real within the model. `voxel.py` uses SEC = row 224, x 1560–1655 of seed-11 terrain. Its interval means × 4 are 0.17 0.72 1.12 1.75 2.77 3.75 2.79 1.68, which round to the symbol (`assets/section.json`).
+- **Wordmark: pixel HCO (`pixel.py`, `FINAL`).**
+  - Letter-pixel p = M/2 = 100 units. The stroke is 2 px = 1M, and the cap height is 10 px = 5M.
+  - Widths: H 8 px, C 9 px, O 10 px.
+  - Corners have 2-stair outer and 1-stair inner steps, so the 45° stroke stays close to the straight-stroke weight.
+  - Spacing is H–C 2 px and C–O 1 px. The total is 30 px = **15M exactly**.
+  - The crossbar sits in rows 2–3 from the top (High Bar retained). The C's aperture runs 400–700 units from the top, so the C's upper jaw ends on the same line as the crossbar: one horizon at 0.6 of the cap height.
+  - Pixels have no overshoot.
+- **Signature: 24 × 5 modules.** It reads symbol 8M, gap 1M, wordmark 15M.
+  - The descriptor is "HIGH COUNTRY OBSERVATIONS" in Instrument Sans Medium, uppercase, tracked +0.04 em and outlined.
+  - It is scaled so its *ink* spans exactly the ink of HCO, and its cap top hangs one letter-pixel (0.5M) below the baseline.
+  - Descriptor treatments compared are in `explore/desc-test*.png`.
+- **Stacked version:** the symbol is centred over the wordmark.
+- **Pixel numerals:** 0–9, tabular, 8 × 10 px, in the same pen (`pixel.py`, `DIGITS`). They are for section numbers, observation markers and key figures, never running text.
+- **Explorations:**
+  - `explore/pixel-wordmarks*.png`: variants A–F and A1–R2. A = M/2 with 2-stair corners was chosen. B is too square; C is diamond-like; D–F are smoother but read as octagons and lose the pixel character.
+  - R1/R2 tested the ridgeline as a continuous 2-px stroke. That was kept for imagery and charts, not the symbol, because a stepped mountain line is close to stock pixel-mountain icons.
+- **Fixed defect:** Round 2 and early Round 3 lockup SVGs used a viewBox starting at y = 0, which clipped the −12-unit overshoot of the drawn O and C by 0.6% of the cap height. The Round 2 files are superseded and left as they were. Pixel letters have no overshoot, and `mark.svg()` now takes an explicit y0.
+
+**Minimum sizes (computed).**
+
+| Version | Screen | Print | Basis |
+|---|---|---|---|
+| Primary | 200 px | 45 mm | Descriptor cap 135 units, so 200 px gives a 9.5 px descriptor and 45 mm gives about 6 pt |
+| Compact | 96 px | 20 mm | — |
+| Symbol | 16 px | 6 mm | Pixel-snapped favicons below 48 px |
+
+**Imagery.** All imagery comes from one illustrative dataset: seed-11 procedural terrain, not a real place.
+- `voxel.py`: isometric block model, cut along section A–A.
+- `assets.py`: pixel map, dot matrix and report map tile.
+- `ridges.py`: new pixel ridgelines. These are stacked profiles drawn with the wordmark's pen (2-px stroke, 1-px stairs, 12 px cells), with nearer lines occluding farther ones.
+- Colour is by elevation percentile, so Basalt dominates and the signal colours appear only on the top few percent.
+
+**Deck system.** 1600 × 1000 boards on a 12-column grid (margin 80, column 98, gutter 24) with 6 rows of 120 (gutter 24) and an 8 px baseline.
+- Type scale: Display 112/112, H1 72/72, H2 40/48, H3 24/32, Body L 20/32, Body 16/24, Label 12/16 (condensed caps), Caption 12/16.
+- Construction drawings use Flag dimension lines with architectural ticks.
+- Applications: report cover and spread, stationery, website (desktop and mobile), vehicle door, patch, equipment label, observation marker, posters.
+- All contact details are bracketed placeholders. Sample report content is labelled as such, and copy lines come from the client's flyer.
+
+**Fonts.**
+- `tools/static_fonts.py` builds static instances of Instrument Sans (OFL 1.1, no Reserved Font Name) into the git-ignored `fonts-static/`. They are named "Instrument Sans Static …", so the PDF's embedded font list names the real typeface. The CSS alias in the deck is `HCO Sans`.
+- Glyphs missing from Instrument Sans (½ ≥ ● and the en space) were removed from the copy, so the PDF embeds no fallback fonts.
+- Verified: only Instrument Sans subsets are embedded, and `deck.html` contains no absolute paths.
+
+**Rebuild.** Needs numpy and the OFL fonts fetched into `fonts-ofl/`.
+
+```bash
+python3 tools/static_fonts.py
+cd round-2 && python3 backgrounds.py 11          # writes the git-ignored assets/dem1920-11.npy
+cd ../round-3 && python3 voxel.py && python3 assets.py && python3 ridges.py && python3 marks.py
+python3 build_deck.py && node ../tools/pages.mjs deck.html boards board 1.2 HCO-Identity-Round-3.pdf
+```
+
+**Still open with the user/client.**
+- Approval of the pixel direction.
+- Trading name: Group or Consulting.
+- Typeface: Instrument Sans or a licensed alternative.
+- Terrain: a real area and licensed DEM, or keep the illustrative model.
+- A naming and trademark check by a qualified adviser.
+- A resemblance search on the final pixel wordmark. Pixel wordmarks are common in technology brands, and the KURATE reference itself should be compared against.
+- The Brace screenshot, if it is still relevant.
 
 ## Round 2 — logo design (2 October 2026)
 
