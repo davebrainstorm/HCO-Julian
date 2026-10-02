@@ -1,0 +1,41 @@
+/* Groundwork shared patterns: logo, theme icons, map stage, charts, stamp. Used by docs and templates. */
+.hco-logo .s { fill: var(--c); }
+[data-theme="light"] .hco-logo .s { fill: currentColor; }
+[data-theme="dark"] .ds-ic-sun, [data-theme="light"] .ds-ic-moon { display: none; }
+[data-theme="light"] [data-theme="dark"] .ds-ic-sun { display: inline; }
+.ds-mapwrap { background: var(--hco-canvas); color: var(--hco-text); border: 1px solid var(--hco-border); }
+.ds-maptool { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; padding: 12px 16px; border-bottom: 1px solid var(--hco-border); }
+.ds-thr { display: flex; align-items: center; gap: 12px; font-size: 14px; }
+.ds-thr .gw-range { width: 140px; }
+.ds-thr output { font-weight: 600; min-width: 36px; }
+.ds-thr__pct { color: var(--hco-text-muted); font-size: 13px; }
+.ds-mapgrid { display: grid; grid-template-columns: minmax(0, 1fr); }
+.ds-mapgrid--side { grid-template-columns: minmax(0, 1fr) 320px; }
+.ds-mapgrid .gw-map { border-bottom: 1px solid var(--hco-border); }
+.ds-mapfoot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 32px; padding: 16px; }
+.ds-mapfoot .gw-legend { width: min(320px, 100%); }
+.ds-mapfoot__r { display: flex; align-items: flex-end; gap: 24px; color: var(--hco-text-muted); }
+.ds-stamp { display: grid; gap: 2px; font: 11px/16px var(--hco-font-mono); color: var(--hco-text-muted); border-left: 2px solid var(--hco-signal); padding: 2px 0 2px 10px; }
+.ds-stamp span:first-child { color: var(--hco-text); }
+.ds-mapside { border-left: 1px solid var(--hco-border); padding: 16px; display: grid; gap: 12px; align-content: start; }
+.ds-obslist { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.ds-obs, .pt-obs { all: unset; box-sizing: border-box; width: 100%; display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 10px; cursor: pointer; border: 1px solid transparent; }
+.ds-obs:hover, .pt-obs:hover { background: var(--hco-surface-sunken); }
+.ds-obs.is-active, .pt-obs.is-active { border-color: var(--hco-border-strong); background: var(--hco-surface-raised); }
+.ds-obs b, .pt-obs b { display: block; font-size: 14px; line-height: 20px; font-weight: 600; }
+.ds-obs small, .pt-obs small { display: block; font-size: 12px; line-height: 16px; color: var(--hco-text-muted); }
+.ds-obs .gw-marker, .pt-obs .gw-marker { --s: 24px; }
+.ds-obsdetail { border-top: 1px solid var(--hco-border); padding-top: 16px; min-height: 140px; }
+.ds-chart { border: 1px solid var(--hco-border); background: var(--hco-surface-raised); padding: 20px; display: grid; gap: 12px; align-content: start; }
+.ds-chart__head b { display: block; font-size: 16px; line-height: 24px; }
+.ds-chart__head span { display: block; font-size: 13px; line-height: 20px; color: var(--hco-text-muted); }
+.ds-chart__foot { font: var(--hco-type-label); font-stretch: 75%; letter-spacing: .1em; text-transform: uppercase; color: var(--hco-caution); }
+.ds-cbar { display: grid; grid-template-columns: 150px 1fr 40px; gap: 12px; align-items: center; font-size: 13px; color: var(--hco-text-muted); }
+.ds-cbar__cells { display: grid; grid-template-columns: repeat(20, 1fr); gap: 2px; height: 14px; }
+.ds-cbar b { color: var(--hco-text); text-align: right; }
+.ds-hist { display: grid; grid-template-columns: repeat(20, 1fr); gap: 2px; align-items: end; height: 160px; }
+.ds-hist__col { display: flex; flex-direction: column-reverse; gap: 2px; }
+.ds-hist__col i { height: 11px; }
+.ds-hist__axis { display: flex; justify-content: space-between; font-size: 11px; color: var(--hco-text-subtle); }
+@media (max-width: 1023px) { .ds-mapgrid--side { grid-template-columns: minmax(0, 1fr); } .ds-mapside { border-left: 0; border-top: 1px solid var(--hco-border); } }
+@media (max-width: 600px) { .ds-cbar { grid-template-columns: 1fr 40px; } .ds-cbar > span { grid-column: 1 / -1; } .ds-thr .gw-range { width: 100px; } }

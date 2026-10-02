@@ -4,7 +4,9 @@ Identity and design system for **HCO — High Country Observations**.
 
 ## Status
 
-**Latest: Round 3 identity system** — `working/round-3/HCO-Identity-Round-3.pdf` (24 boards, previews in `working/round-3/boards/`). It covers:
+**Latest: Groundwork, the HCO design system (v0.1)**: `review/hco/` is a static review site of 18 pages. It holds tokens, 82 pixel icons, 13 component families, data and map styles, and five templates (client portal, field report, field app, website and email). Open `review/hco/index.html`. Publishing notes are in `review/hco/README.md`.
+
+Previous: **Round 3 identity system** — `working/round-3/HCO-Identity-Round-3.pdf` (24 boards, previews in `working/round-3/boards/`). It covers:
 
 - the Ridgeline symbol, drawn from a measured terrain section
 - a custom pixel HCO wordmark and pixel numerals

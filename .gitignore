@@ -24,3 +24,6 @@ working/round-2/assets/*.jpg
 working/round-2/assets/bg-*-5.png
 working/round-2/assets/bg-*-23.png
 working/round-2/assets/bg-A-pixel-11-*.png
+
+# Groundwork design-system build intermediates and QA screenshots (regenerate with the scripts in working/design-system)
+working/design-system/build/
