@@ -1,0 +1,52 @@
+{
+ "palette": {
+  "basalt": "#0E2423",
+  "moss": "#2E4B43",
+  "sage": "#6F8E7A",
+  "lichen": "#D6E65D",
+  "chalk": "#F4F5EF",
+  "flag": "#EC5D2F"
+ },
+ "contrast": [
+  [
+   "chalk",
+   "basalt",
+   14.79
+  ],
+  [
+   "lichen",
+   "basalt",
+   11.84
+  ],
+  [
+   "flag",
+   "basalt",
+   4.77
+  ],
+  [
+   "sage",
+   "basalt",
+   4.5
+  ],
+  [
+   "moss",
+   "basalt",
+   1.7
+  ],
+  [
+   "flag",
+   "chalk",
+   3.1
+  ],
+  [
+   "sage",
+   "chalk",
+   3.29
+  ],
+  [
+   "lichen",
+   "chalk",
+   1.25
+  ]
+ ]
+}

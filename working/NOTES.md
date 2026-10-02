@@ -10,6 +10,16 @@ _Stage 1 (exploration) — 28 September 2026._
 | 1 · Concept routes and type directions | **Presented for approval**: `concepts/HCO-Concept-Review.pdf` (11 pages, three routes and type directions) and `concepts/HCO-Top-5-Concepts.pdf` (8 pages, five concepts ranked). Previews are in `concepts/review-png/` and `concepts/top5-png/` |
 | 2 · Identity system, five-page pack, exports and QA | **Not started.** Waiting for route, type and naming decisions. The brief says not to finalise the book around an unapproved logo. |
 
+## Logo brief v2 — “The mountain, measured” (2 October 2026)
+
+The user asked for a new round: a coloured or conceptual background, the palette inside the logo, digitised mountains as background imagery, and a minimalist pixel-style symbol of data mapped onto terrain. The brief is in `brief-v2/`:
+
+- `HCO-Logo-Brief-v2.pdf` (9 pages) and `HCO-Logo-Brief-v2.md` (the same content, agent-readable). Both are generated from `content.py` by `build_brief.py`. The diagrams come from `diagrams.py`, using seeded procedural terrain that is illustrative, not real elevation data.
+- References are in `brief-v2/refs/`: third-party work, kept for internal discussion only. Refs 2–5 were Display-P3 screenshots and are converted to sRGB for display (`assets/ref*-display.png`). Study 01 is sRGB, and its measured colours are lime #D6E65D, field #0C2425 and wordmark #F5F6EE.
+- `logosystem.co/logo/brace` is blocked by this environment's network policy; a screenshot has been requested.
+- Key findings: (1) sampled side-on, a mountain becomes a ziggurat or a bar chart, so sample from above; (2) Study 01's symbol has a 0.8 px module at 16 px; (3) Lichen on Chalk measures 1.25:1, so the full-colour symbol must sit on Basalt; (4) Flag was nudged to #EC5D2F to reach 4.77:1 on Basalt.
+- Rebuild: `cd working/brief-v2 && python3 diagrams.py && python3 build_brief.py && node ../tools/pages.mjs brief.html brief-png brief 1.6 HCO-Logo-Brief-v2.pdf` (needs numpy).
+
 ## Source material
 
 The client's two references arrived as images in the conversation. They were not saved into the repository, so they are described here.

@@ -4,6 +4,8 @@ Identity and design system for **HCO — High Country Observations**.
 
 ## Status
 
+**Latest: logo brief v2, “The mountain, measured”** — `working/brief-v2/HCO-Logo-Brief-v2.pdf` (9 pages) and `HCO-Logo-Brief-v2.md`. A new symbol, palette and background direction, awaiting approval before design.
+
 **Stage 1 of 2: concept routes and type directions, awaiting approval.**
 
 - `working/concepts/HCO-Top-5-Concepts.pdf` — the five strongest concepts, ranked, with a page each, a comparison and a recommendation. Previews are in `working/concepts/top5-png/`.
