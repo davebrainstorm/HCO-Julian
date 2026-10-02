@@ -10,6 +10,36 @@ _Stage 1 (exploration) — 28 September 2026._
 | 1 · Concept routes and type directions | **Presented for approval**: `concepts/HCO-Concept-Review.pdf` (11 pages, three routes and type directions) and `concepts/HCO-Top-5-Concepts.pdf` (8 pages, five concepts ranked). Previews are in `concepts/review-png/` and `concepts/top5-png/` |
 | 2 · Identity system, five-page pack, exports and QA | **Not started.** Waiting for route, type and naming decisions. The brief says not to finalise the book around an unapproved logo. |
 
+## Round 2 — logo design (2 October 2026)
+
+`working/round-2/HCO-Logo-Round-2.pdf` contains 16 boards at 1600 × 1000 px. PNGs at 1920 × 1200 are in `round-2/boards/`.
+
+- **Defaults taken because the brief's open questions are unanswered:** illustrative procedural terrain (no region confirmed); HCO and High Country Observations as the names; both wordmark options tested.
+- **Palette changes from brief v2, measured:**
+  - Lichen moves from #D6E65D (Study 01) to a mineral #C9D36E: 10.06:1 on Basalt, 1.47:1 on Chalk. This addresses the "volt" trend risk.
+  - Sage moves from #6F8E7A to #72907C: 4.63:1 on Basalt. The old value was 4.498:1, which displayed as 4.50 but failed AA.
+- **Process:**
+  - 2,379 candidates were sampled from terrain (580 plan rasters, 497 ridge profiles, 1,302 contour rings) and filtered against the brief.
+  - 25 were drawn by hand, and 3 studies went forward: S1 Massif (plan raster), S2 Observation (plan raster with a Flag cell) and S3 Ridgeline (profile line).
+  - Contour rings were rejected because they read as eyes or Pac-Man, which the brief rules out.
+  - The brief's plan-view hypothesis was revised: a profile survives the traps once it plots the surface line instead of the mass.
+- **Recommendation:** S3 Ridgeline with W1 High Bar.
+  - Module M = 200 units = one cell = one stem. Cap height = 5M.
+  - The crossbar fills row 4 of 5 (centre 70%, thickness 164). The H is 4M wide.
+  - The gap between symbol and wordmark is 1M. The symbol is 8 × 5 cells and stands on the baseline.
+  - The descriptor is set to the width of HCO, with its baseline 1.5M below. Clear space is 2M.
+  - W2 (grid-built) is rejected because it reads as a game or display face.
+- **Resemblance search** (recorded; not trademark clearance):
+  - Stock "pixel mountain" logos are common, e.g. logomood.com/downloads/pixel-mountain and vecteezy pixel-mountain. This weighs against S1 and S2.
+  - No close match was found for a single-cell pixel ridgeline.
+  - Naming flag: "High Country" is also a Chevrolet Silverado trim and the name of High Country Outfitters (an outdoor retailer). Check the name before release.
+- **Artwork:** `round-2/marks/`
+  - outlined SVG symbols, lockups (with descriptor / compact), stacked versions (S3) and wordmarks
+  - pixel-perfect favicons on a Basalt tile at 16/24/32/180/512 px (integer cell sizes)
+  - These are review artwork, not the final export set.
+- **Rebuild:** `cd working/round-2`, then run each in turn: `python3 terrain.py`, `python3 backgrounds.py 11`, `python3 explore.py`, `python3 explore_contour.py`, `python3 marks.py`, `python3 build_deck.py`, then `node ../tools/pages.mjs deck.html boards board 1.2 HCO-Logo-Round-2.pdf`. Needs numpy and the fonts in `working/fonts-ofl`.
+- **Next, on approval:** refine the chosen artwork, build the full logo family and exports, then write the five-page identity pack.
+
 ## Logo brief v2 — “The mountain, measured” (2 October 2026)
 
 The user asked for a new round: a coloured or conceptual background, the palette inside the logo, digitised mountains as background imagery, and a minimalist pixel-style symbol of data mapped onto terrain. The brief is in `brief-v2/`:

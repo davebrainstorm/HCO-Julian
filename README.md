@@ -4,7 +4,9 @@ Identity and design system for **HCO — High Country Observations**.
 
 ## Status
 
-**Latest: logo brief v2, “The mountain, measured”** — `working/brief-v2/HCO-Logo-Brief-v2.pdf` (9 pages) and `HCO-Logo-Brief-v2.md`. A new symbol, palette and background direction, awaiting approval before design.
+**Latest: Round 2 logo design** — `working/round-2/HCO-Logo-Round-2.pdf` (16 boards): three symbol studies, wordmarks, palette, backgrounds and identity studies. The recommendation is Ridgeline with High Bar, awaiting approval.
+
+Previous: **logo brief v2, “The mountain, measured”** — `working/brief-v2/HCO-Logo-Brief-v2.pdf` (9 pages) and `HCO-Logo-Brief-v2.md`. A new symbol, palette and background direction, awaiting approval before design.
 
 **Stage 1 of 2: concept routes and type directions, awaiting approval.**
 

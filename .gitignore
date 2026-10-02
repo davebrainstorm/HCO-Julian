@@ -17,3 +17,10 @@ __pycache__/
 node_modules/
 .DS_Store
 working/**/_preview.*
+
+# Regenerable terrain arrays and unused render variants (rebuild with the round-2 scripts)
+working/round-2/assets/*.npy
+working/round-2/assets/*.jpg
+working/round-2/assets/bg-*-5.png
+working/round-2/assets/bg-*-23.png
+working/round-2/assets/bg-A-pixel-11-*.png
