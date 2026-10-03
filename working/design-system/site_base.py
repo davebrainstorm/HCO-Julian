@@ -95,7 +95,7 @@ def THEME_BOOT(key="gw-theme"):
     return "<script>try{var t=localStorage.getItem('" + key + "');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>"
 def head(title, desc, css="docs.css", extra="", key="gw-theme"):
     return (f'<!doctype html><html lang="en-IE" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
-            f'<title>{e(title)} · Groundwork · HCO</title><meta name="description" content="{e(desc)}"><meta name="robots" content="noindex, nofollow">'
+            f'<title>{e(title) + " · " if title != "Groundwork" else ""}Groundwork · HCO</title><meta name="description" content="{e(desc)}"><meta name="robots" content="noindex, nofollow">'
             f'<meta name="theme-color" content="#0E2423"><link rel="icon" href="assets/img/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="assets/img/favicon-180.png">'
             f'{FONT}<link rel="stylesheet" href="assets/css/{css}">{extra}{THEME_BOOT(key)}</head>')
 def top():

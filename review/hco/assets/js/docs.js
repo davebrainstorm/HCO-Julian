@@ -33,7 +33,12 @@
       var b = e.target.closest("[data-copy]"); if (!b) return;
       var txt = b.getAttribute("data-copy"); if (!txt) { var pre = b.parentElement.querySelector("pre, code"); txt = pre ? pre.innerText : ""; }
       var ok = function () { if (window.GW && GW.toast) GW.toast("Copied", { body: txt.length > 64 ? txt.slice(0, 64) + "…" : txt, icon: "copy" }); };
-      if (navigator.clipboard) navigator.clipboard.writeText(txt).then(ok, ok); else ok();
+      var manual = function () {
+        var pre = b.parentElement.querySelector("pre, code");
+        if (pre) { var r = document.createRange(); r.selectNodeContents(pre); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }
+        if (window.GW && GW.toast) GW.toast("Couldn’t copy automatically", { body: pre ? "The text is selected. Press Ctrl+C or ⌘C to copy it." : txt, icon: "copy" });
+      };
+      try { if (navigator.clipboard) navigator.clipboard.writeText(txt).then(ok, manual); else manual(); } catch (err) { manual(); }
     });
     // search
     var find = document.querySelector(".ds-find"), input = find && find.querySelector("input"), list = find && find.querySelector(".ds-find__list"), idx = window.GW_INDEX || [], sel = 0, hits = [];
